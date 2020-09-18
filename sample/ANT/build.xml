@@ -33,10 +33,14 @@
 				secretsPassword="${secrets.password}"
 				testEnvironmentSecretsPassword="${testenvironment.secretspassword}"
 				invokeTestRunMonitor="true"
+			    smtpPath="../smtp"
+			    licensePath="../license" 
 				>
 		
 			<fileset id="testcases" dir="../tests"></fileset>
 
+			<emailProperties sendEmail="true" primaryRecipients="aastha.jain@provartesting.com" ccRecipients="" bccRecipients="" emailSubject="Provar test run report" attachExecutionReport="true" attachZip="true"/>
+			<attachmentProperties includeAllFailuresInSummary="true" includeOnlyFailures="false" includeOnlyBdd="false" includeSkipped="false" includeTestCaseDescription="false" includeScreenshots="false" includeWarningMessages="false" includeInfoMessages="false" includeDebugMessages="false" includeTestStepTime="false" includeTestStepPathHierarchy="true" includeFullScreenShot="false"/>
 		</Run-Test-Case>
 
 	</target>
